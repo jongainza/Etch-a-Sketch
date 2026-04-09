@@ -2,7 +2,7 @@
 console.log('hello world');
 
 let space = document.querySelector('.div')
-let gridsNumber=25
+let gridsNumber=16
 
 
 
@@ -31,9 +31,17 @@ function createGrid(gridsNumber){
 
 let btn = document.querySelector(".btn-add");
 btn.addEventListener("click", () => {
-  gridsNumber = prompt("Enter a number of grid no higher than 100", 16);
-  space.innerHTML=""
-  createGrid(gridsNumber)
+  gridsNumber = prompt("Enter a number of grid no higher than 100",'enter grid number');
+  if (gridsNumber>100){
+   alert("grid should be no higher than 100");
+     gridsNumber = prompt("Enter a number of grid no higher than 100",'enter grid number');
+    space.innerHTML = "";
+    createGrid(gridsNumber);
+  }else{
+   space.innerHTML = "";
+   createGrid(gridsNumber);
+  }
+  
 });
 
 createGrid(gridsNumber)
