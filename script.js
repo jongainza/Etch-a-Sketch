@@ -1,36 +1,39 @@
 
 console.log('hello world');
-let gridsNumber=25
 
 let space = document.querySelector('.div')
+let gridsNumber=25
 
-let gridsFlex = (100/gridsNumber).toFixed(4)
-let gridsHeigth = gridsFlex
+
 
 function createGrid(gridsNumber){
+ let gridsFlex = (100/gridsNumber).toFixed(4)
+ let gridsHeigth = gridsFlex
  for (let i=1 ;  i<= gridsNumber * gridsNumber ; i++){
   let grid = document.createElement('div')
- 
+  
   grid.textContent=`${i}`
   grid.classList.add('grid')
   grid.style.flex= `1 0 ${gridsFlex}%`
   grid.style.height=`${gridsHeigth
   }%`
   grid.addEventListener("mouseenter", () => {
-    console.log("hover");
-
-    grid.classList.add("hover");
+   console.log("hover");
+   
+   grid.classList.add("hover");
   });
   grid.addEventListener("mouseleave", () => {
-    grid.classList.remove("hover");
+   grid.classList.remove("hover");
   });
   space.appendChild(grid)
-     
-
-
-
  }
 }
 
+let btn = document.querySelector(".btn-add");
+btn.addEventListener("click", () => {
+  gridsNumber = prompt("Enter a number of grid no higher than 100", 16);
+  space.innerHTML=""
+  createGrid(gridsNumber)
+});
 
 createGrid(gridsNumber)

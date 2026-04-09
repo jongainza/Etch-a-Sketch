@@ -19,3 +19,17 @@ height: 70vh;
 .hover{
  background: pink;
 }
+
+.btn{
+ width: 100vw;
+ margin: 40px auto;
+ display:flex;
+ justify-content: center;
+}
+
+.btn-add{
+ padding: 10px;
+ background: rgb(127, 127, 237);
+ border-radius: 8px;
+ border: none;
+}
