@@ -25,10 +25,19 @@ function createGrid(gridsNumber){
   grid.addEventListener("mouseleave", () => {
    grid.classList.remove("hover");
   });
+  grid.addEventListener('click',gridClick)
   space.appendChild(grid)
  }
 }
-
+function getRandomValue(){
+ return Math.floor(Math.random() * 255 + 1);
+}
+function gridClick(e){
+ console.log(e.target);
+ e.target.style.background = `rgb(${getRandomValue()}, ${getRandomValue()}, ${getRandomValue()})`;
+ console.log(e.target);
+ 
+}
 let btn = document.querySelector(".btn-add");
 btn.addEventListener("click", () => {
   gridsNumber = prompt("Enter a number of grid no higher than 100",'enter grid number');
