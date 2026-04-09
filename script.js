@@ -32,6 +32,15 @@ function createGrid(gridsNumber){
 function getRandomValue(){
  return Math.floor(Math.random() * 255 + 1);
 }
+//  let initialValue = 0;
+// function getDarkening(){
+
+//  console.log(initialValue);
+ 
+//  if(initialValue<100)initialValue+=10;
+//  console.log(initialValue);
+//  return initialValue
+// }
 function gridClick(e){
  console.log(e.target);
  e.target.style.background = `rgb(${getRandomValue()}, ${getRandomValue()}, ${getRandomValue()})`;
